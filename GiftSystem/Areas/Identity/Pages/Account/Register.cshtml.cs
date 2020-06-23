@@ -84,13 +84,13 @@ namespace GiftSystem.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, PhoneNumber = Input.PhoneNumber};
-                var result = await _userManager.CreateAsync(user, Input.Password);
                 var isPhoneUsed = _userManager.Users.Any(p => p.PhoneNumber == Input.PhoneNumber);
                 if (isPhoneUsed)
                 {
                     return this.Page();
                 }
+                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, PhoneNumber = Input.PhoneNumber};
+                var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");

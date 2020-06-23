@@ -1,5 +1,6 @@
 ﻿namespace GiftSystem.Services
 {
+    using System;
     using System.Threading.Tasks;
     using Data;
     using Data.Models;
@@ -31,6 +32,14 @@
             receivingUser.Credits += count;
             this.db.Users.Update(sendingUser);
             this.db.Users.Update(receivingUser);
+            var transfer = new Transfer
+            {
+                Id = Guid.NewGuid().ToString(),
+                Message = message,
+                SenderId = sender.Id,
+                ReceiverId = receivingUser.Id
+            };
+            await this.db.Transfers.AddAsync(transfer);
             await this.db.SaveChangesAsync();
             return "Successful";
         }

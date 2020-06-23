@@ -7,6 +7,8 @@
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
+        public DbSet<Transfer> Transfers { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -42,6 +44,7 @@
             builder.Entity<ApplicationUser>()
                 .HasIndex(a => a.PhoneNumber)
                 .IsUnique();
+
         }
 
         private void ConfigureUserIdentityRelations(ModelBuilder builder)

@@ -31,7 +31,7 @@
         public async Task<string> Index(SendCreditsViewModel model)
         {
             var sender = await this.userManager.GetUserAsync(this.User);
-            return await this.creditsService.TransferCredits(sender, model.ReceiverPhoneNumber, model.Credits, model.Message);
+            return await this.creditsService.TransferCredits(sender, model.ReceiverPhoneNumber, model.Credits, model.SanitizedMessage);
         }
     }
 }
