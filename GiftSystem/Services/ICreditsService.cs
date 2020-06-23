@@ -5,6 +5,6 @@
 
     public interface ICreditsService
     {
-        Task<string> TransferCredits(ApplicationUser sender, ApplicationUser receiver, int count, string message);
+        Task<string> TransferCredits(ApplicationUser sender, string receiverPhone, int count, string message);
     }
 }

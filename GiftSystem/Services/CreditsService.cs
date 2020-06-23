@@ -3,6 +3,7 @@
     using System.Threading.Tasks;
     using Data;
     using Data.Models;
+    using Microsoft.EntityFrameworkCore;
 
     public class CreditsService : ICreditsService
     {
@@ -12,18 +13,18 @@
         {
             this.db = db;
         }
-        public async Task<string> TransferCredits(ApplicationUser sender, ApplicationUser receiver, int count, string message)
+        public async Task<string> TransferCredits(ApplicationUser sender, string receiverPhone, int count, string message)
         {
-            var sendingUser = await this.db.Users.FindAsync(sender);
-            var receivingUser = await this.db.Users.FindAsync(receiver);
+            var sendingUser = await this.db.Users.FindAsync(sender.Id);
+            var receivingUser = await this.db.Users.FirstOrDefaultAsync(x => x.PhoneNumber == receiverPhone);
 
-            if (sendingUser.Credits <= count)
-            {
-                return "Not enough credits";
-            }
             if (receivingUser == null)
             {
                 return "Receiving user not found";
+            }
+            if (sendingUser.Credits <= count)
+            {
+                return "Not enough credits";
             }
 
             sendingUser.Credits -= count;

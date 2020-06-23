@@ -10,6 +10,7 @@ namespace GiftSystem
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Services;
 
     public class Startup
     {
@@ -44,6 +45,8 @@ namespace GiftSystem
             services.AddRazorPages();
 
             services.AddSingleton(this.configuration);
+
+            services.AddTransient<ICreditsService, CreditsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
