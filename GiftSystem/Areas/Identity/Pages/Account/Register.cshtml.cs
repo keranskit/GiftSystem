@@ -55,6 +55,7 @@ namespace GiftSystem.Areas.Identity.Pages.Account
             [Required]
             [DataType(DataType.PhoneNumber)]
             [Display(Name = "PhoneNumber")]
+            [RegularExpression("^(\\+359)[0-9]{9}")]
             public string PhoneNumber { get; set; }
 
             public int Credits { get; set; }
@@ -83,7 +84,7 @@ namespace GiftSystem.Areas.Identity.Pages.Account
             var isPhoneUsed = _userManager.Users.Any(p => p.PhoneNumber == Input.PhoneNumber);
             if (isPhoneUsed)
             {
-                ModelState.AddModelError(string.Empty, errorMessage: "Phone already taken");
+                ModelState.AddModelError(string.Empty, errorMessage: "Phone Number is already taken.");
             }
             returnUrl = returnUrl ?? Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
