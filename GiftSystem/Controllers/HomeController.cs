@@ -1,9 +1,12 @@
 ﻿namespace GiftSystem.Controllers
 {
     using ViewModels;
-    using System.Diagnostics;
+
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
+
+    using System.Diagnostics;
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> logger;

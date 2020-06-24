@@ -1,14 +1,16 @@
 ﻿namespace GiftSystem.Controllers
 {
-    using System.Linq;
-    using System.Threading.Tasks;
     using Data;
     using Data.Models;
+    using Services;
+    using ViewModels;
+
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-    using ViewModels;
-    using Services;
+    
+    using System.Linq;
+    using System.Threading.Tasks;
 
     [Authorize]
     public class TransfersController : Controller
@@ -27,18 +29,23 @@
             this.dbContext = dbContext;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string id)
         {
+            ViewBag.Id = id;
             var user = await this.userManager.FindByNameAsync(this.User.Identity.Name);
-            var model = new SendCreditsViewModel {Credits = this.dbContext.Users.FirstOrDefault(x => x.Id == user.Id).Credits};
+            var model = new SendCreditsViewModel
+            {
+                Credits = this.dbContext.Users.FirstOrDefault(x => x.Id == user.Id).Credits,
+            };
             return this.View(model);
         }
 
         [HttpPost]
-        public async Task<string> Index(SendCreditsViewModel model)
+        public async Task<IActionResult> Index(SendCreditsViewModel model)
         {
             var sender = await this.userManager.GetUserAsync(this.User);
-            return await this.creditsService.TransferCredits(sender, model.ReceiverPhoneNumber, model.Credits, model.SanitizedMessage);
+            var result = await this.creditsService.TransferCredits(sender, model.ReceiverPhoneNumber, model.Credits, model.SanitizedMessage);
+            return this.RedirectToAction("Index", new { id = result });
         }
     }
 }

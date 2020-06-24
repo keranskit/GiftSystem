@@ -1,12 +1,13 @@
 ﻿namespace GiftSystem.Areas.Administration.Controllers
 {
-    using System.Linq;
     using Data.Models;
-    using Microsoft.AspNetCore.Identity;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.EntityFrameworkCore;
     using Services;
     using ViewModels;
+
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+
+    using System.Linq;
 
     public class MainController : AdministrationController
     {
@@ -17,10 +18,10 @@
             ITransfersService transfersService, 
             UserManager<ApplicationUser> userManager)
         {
-            ;
             this.transfersService = transfersService;
             this.userManager = userManager;
         }
+
         public IActionResult Index()
         {
             var viewModel = new AdminViewModel

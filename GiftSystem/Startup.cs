@@ -2,6 +2,8 @@ namespace GiftSystem
 {
     using Data;
     using Data.Models;
+    using Services;
+
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Builder;
@@ -10,7 +12,6 @@ namespace GiftSystem
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
-    using Services;
 
     public class Startup
     {

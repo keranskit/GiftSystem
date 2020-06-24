@@ -44,7 +44,6 @@
             builder.Entity<ApplicationUser>()
                 .HasIndex(a => a.PhoneNumber)
                 .IsUnique();
-
         }
 
         private void ConfigureUserIdentityRelations(ModelBuilder builder)

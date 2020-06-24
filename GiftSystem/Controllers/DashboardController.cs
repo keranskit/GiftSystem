@@ -1,12 +1,14 @@
 ﻿namespace GiftSystem.Controllers
 {
-    using System.Threading.Tasks;
     using Data.Models;
+    using Services;
+    using ViewModels;
+    
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-    using Services;
-    using ViewModels;
+
+    using System.Threading.Tasks;
 
     [Authorize]
     public class DashboardController : Controller

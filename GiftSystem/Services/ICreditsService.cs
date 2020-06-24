@@ -1,7 +1,8 @@
 ﻿namespace GiftSystem.Services
 {
-    using System.Threading.Tasks;
     using Data.Models;
+
+    using System.Threading.Tasks;
 
     public interface ICreditsService
     {

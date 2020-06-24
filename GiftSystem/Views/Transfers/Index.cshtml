@@ -5,6 +5,12 @@
     this.ViewData["Title"] = "Transfer";
 }
 
+@if (ViewBag.Id != null)
+{
+    <div class="alert alert-warning" role="alert">
+        <h5 align="center">@ViewBag.Id.ToString()</h5>
+    </div>
+}
 <div>
     <h4 align="center">You have @Model.Credits credits</h4>
 </div>

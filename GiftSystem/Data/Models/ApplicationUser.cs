@@ -25,6 +25,5 @@
 
         [Required]
         public int Credits { get; set; }
-
     }
 }

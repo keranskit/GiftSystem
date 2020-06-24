@@ -1,9 +1,11 @@
 ﻿namespace GiftSystem.Services
 {
-    using System.Collections.Generic;
-    using System.Linq;
     using Data;
     using Data.Models;
+
+    using System.Linq;
+    using System.Collections.Generic;
+    
     using Microsoft.EntityFrameworkCore;
 
     public class TransfersService : ITransfersService
@@ -14,7 +16,6 @@
         {
             this.dbContext = dbContext;
         }
-
 
         public IEnumerable<Transfer> GetBySenderId(string id)
         {

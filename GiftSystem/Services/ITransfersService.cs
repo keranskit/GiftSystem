@@ -1,7 +1,8 @@
 ﻿namespace GiftSystem.Services
 {
-    using System.Collections.Generic;
     using Data.Models;
+
+    using System.Collections.Generic;
 
     public interface ITransfersService
     {

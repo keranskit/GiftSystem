@@ -1,9 +1,11 @@
 ﻿namespace GiftSystem.Services
 {
-    using System;
-    using System.Threading.Tasks;
     using Data;
     using Data.Models;
+
+    using System;
+    using System.Threading.Tasks;
+
     using Microsoft.EntityFrameworkCore;
 
     public class CreditsService : ICreditsService
@@ -14,6 +16,7 @@
         {
             this.db = db;
         }
+
         public async Task<string> TransferCredits(ApplicationUser sender, string receiverPhone, int count, string message)
         {
             var sendingUser = await this.db.Users.FindAsync(sender.Id);
@@ -32,6 +35,7 @@
             receivingUser.Credits += count;
             this.db.Users.Update(sendingUser);
             this.db.Users.Update(receivingUser);
+
             var transfer = new Transfer
             {
                 Id = Guid.NewGuid().ToString(),
@@ -42,6 +46,7 @@
             };
             await this.db.Transfers.AddAsync(transfer);
             await this.db.SaveChangesAsync();
+
             return "Successful";
         }
     }

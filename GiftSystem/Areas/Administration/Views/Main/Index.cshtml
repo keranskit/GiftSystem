@@ -2,6 +2,7 @@
 @{
     this.ViewData["Title"] = "AdminMainDashboard";
 }
+
 <h3 align="center">All transfers:</h3>
 <table class="table table-sm">
     <thead>
@@ -24,29 +25,26 @@
         }
     </tbody>
 </table>
-
 <hr>
 <hr>
 <hr>
-
-
 <h3 align="center">All users:</h3>
 <table class="table table-sm">
     <thead>
-        <tr>
-            <th scope="col">Credits</th>
-            <th scope="col">Email</th>
-            <th scope="col">Phone</th>
-        </tr>
+    <tr>
+        <th scope="col">Credits</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+    </tr>
     </thead>
     <tbody>
-        @foreach (var user in Model.Users)
-        {
-            <tr>
-                <th scope="row">@user.Credits</th>
-                <td>@user.Email</td>
-                <td>@user.PhoneNumber</td>
-            </tr>
-        }
+    @foreach (var user in Model.Users)
+    {
+        <tr>
+            <th scope="row">@user.Credits</th>
+            <td>@user.Email</td>
+            <td>@user.PhoneNumber</td>
+        </tr>
+    }
     </tbody>
 </table>
