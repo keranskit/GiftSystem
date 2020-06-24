@@ -1,0 +1,13 @@
+﻿@model GiftSystem.ViewModels.AdminViewModel
+
+@foreach (var transfer in Model.Transfers)
+{
+    <p>Sender: @transfer.Sender.PhoneNumber, Receiver: @transfer.Receiver.PhoneNumber, Credits: @transfer.Credits, Message: @transfer.Message</p>
+}
+
+<hr>
+
+@foreach (var user in Model.Users)
+{
+    <p>User: @user.Email, Credits: @user.Credits</p>
+}
