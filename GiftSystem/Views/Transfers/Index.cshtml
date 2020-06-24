@@ -1,12 +1,15 @@
 ﻿@using GiftSystem.Data.Models
 @using Microsoft.AspNetCore.Identity
 @model GiftSystem.ViewModels.SendCreditsViewModel
+@{
+    this.ViewData["Title"] = "Transfer";
+}
 
 <div>
-    <h1>You have @Model.Credits credits</h1>
+    <h4 align="center">You have @Model.Credits credits</h4>
 </div>
 <div class="text-center">
-    <h2 class="display-4">Transfer new credits</h2>
+    <h2 align="center">Make new transfer</h2>
 </div>
 <form asp-controller="Transfers" asp-action="Index" method="post">
     <input type="hidden" asp-for="Sender" value="@this.User" />
@@ -22,7 +25,7 @@
     </div>
     <div>
         <label asp-for="Credits"></label>
-        <input asp-for="Credits" class="form-control"/>
+        <input asp-for="Credits" class="form-control" />
         <span asp-validation-for="Credits" class="text-danger"></span>
     </div>
     <hr />

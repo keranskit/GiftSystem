@@ -1,30 +1,52 @@
 ﻿@model GiftSystem.ViewModels.AdminViewModel
-
+@{
+    this.ViewData["Title"] = "AdminMainDashboard";
+}
+<h3 align="center">All transfers:</h3>
 <table class="table table-sm">
     <thead>
-    <tr>
-        <th scope="col">Credits</th>
-        <th scope="col">Sender</th>
-        <th scope="col">Receiver</th>
-        <th scope="col">Message</th>
-    </tr>
+        <tr>
+            <th scope="col">Credits</th>
+            <th scope="col">Sender</th>
+            <th scope="col">Receiver</th>
+            <th scope="col">Message</th>
+        </tr>
     </thead>
     <tbody>
-    @foreach (var transfer in Model.Transfers)
-    {
-        <tr>
-        <th scope="row">@transfer.Credits</th>
-        <td>@transfer.Sender.PhoneNumber</td>
-        <td>@transfer.Receiver.PhoneNumber</td>
-        <td>@transfer.Message</td>
-    </tr>
-    }
+        @foreach (var transfer in Model.Transfers)
+        {
+            <tr>
+                <th scope="row">@transfer.Credits</th>
+                <td>@transfer.Sender.PhoneNumber</td>
+                <td>@transfer.Receiver.PhoneNumber</td>
+                <td>@transfer.Message</td>
+            </tr>
+        }
     </tbody>
 </table>
 
 <hr>
+<hr>
+<hr>
 
-@foreach (var user in Model.Users)
-{
-    <p>User: @user.Email, Credits: @user.Credits</p>
-}
+
+<h3 align="center">All users:</h3>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">Credits</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <th scope="row">@user.Credits</th>
+                <td>@user.Email</td>
+                <td>@user.PhoneNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>

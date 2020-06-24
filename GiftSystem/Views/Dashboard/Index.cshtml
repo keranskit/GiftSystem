@@ -1,14 +1,55 @@
 ﻿@model GiftSystem.ViewModels.DashboardViewModel
-<div>
-    @foreach (var sent in Model.Sent)
-    {
-        <p>@sent.Credits credits sent to @sent.Receiver.PhoneNumber with message: @sent.Message</p>
-    }
+@{
+    this.ViewData["Title"] = "UserDashboard";
+}
+
+<div class="container">
+    <h4 style="margin: 1%; text-align: center;">Sent credits</h4>
+    <div style="padding: 5%;">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Credits</th>
+                <th scope="col">Receiver</th>
+                <th>Message</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var sent in Model.Sent)
+            {
+                <tr>
+                    <th scope="row">@sent.Credits</th>
+                    <td>@sent.Receiver.PhoneNumber</td>
+                    <td>@sent.Message</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
 </div>
 
-<div>
-    @foreach (var received in Model.Received)
-    {
-    <p>@received.Credits credits received from @received.Sender.PhoneNumber with message: @received.Message</p>
-    }
+
+<div class="container">
+    <h4 style="margin: 1%; text-align: center;">Received credits</h4>
+    <div style="padding: 5%;">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Credits</th>
+                <th scope="col">Sender</th>
+                <th>Message</th>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach (var received in Model.Received)
+                {
+                    <tr>
+                        <th scope="row">@received.Credits</th>
+                        <td>@received.Sender.PhoneNumber</td>
+                        <td>@received.Message</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

@@ -13,10 +13,10 @@
         @if (SignInManager.IsSignedIn(User))
         {
             <li class="nav-item">
-                <a class="nav-link text-dark" asp-controller="Dashboard" asp-action="Index" title="Manage">Dashboard</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="Index" title="Manage">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark" asp-controller="Transfers" asp-action="Index" title="Manage">Make new transfer</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Transfers" asp-action="Index" title="Manage">Make new transfer</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
