@@ -161,3 +161,12 @@ D:\git\GiftSystem\GiftSystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\
 D:\git\GiftSystem\GiftSystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 D:\git\GiftSystem\GiftSystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 D:\git\GiftSystem\GiftSystem\obj\Debug\netcoreapp3.1\Razor\Views\Transfers\Index.cshtml.g.cs
+D:\git\GiftSystem\GiftSystem\bin\Debug\netcoreapp3.1\AngleSharp.dll
+D:\git\GiftSystem\GiftSystem\bin\Debug\netcoreapp3.1\AngleSharp.Css.dll
+D:\git\GiftSystem\GiftSystem\bin\Debug\netcoreapp3.1\HtmlSanitizer.dll
+D:\git\GiftSystem\GiftSystem\bin\Debug\netcoreapp3.1\System.Text.Encoding.CodePages.dll
+D:\git\GiftSystem\GiftSystem\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll
+D:\git\GiftSystem\GiftSystem\obj\Debug\netcoreapp3.1\GiftSystem.csproj.CoreCompileInputs.cache
+D:\git\GiftSystem\GiftSystem\obj\Debug\netcoreapp3.1\GiftSystem.MvcApplicationPartsAssemblyInfo.cs
+D:\git\GiftSystem\GiftSystem\obj\Debug\netcoreapp3.1\GiftSystem.MvcApplicationPartsAssemblyInfo.cache
+D:\git\GiftSystem\GiftSystem\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\Index.cshtml.g.cs

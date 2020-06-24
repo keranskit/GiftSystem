@@ -1,0 +1,15 @@
+﻿@model GiftSystem.Models.DashboardViewModel
+
+<div>
+    @foreach (var sent in Model.Sent)
+    {
+        <p>@sent.Credits credits sent to @sent.Receiver.PhoneNumber with message: @sent.Message</p>
+    }
+</div>
+
+<div>
+    @foreach (var received in Model.Received)
+    {
+    <p>@received.Credits credits received from @received.Sender.PhoneNumber with message: @received.Message</p>
+    }
+</div>

@@ -37,7 +37,8 @@
                 Id = Guid.NewGuid().ToString(),
                 Message = message,
                 SenderId = sender.Id,
-                ReceiverId = receivingUser.Id
+                ReceiverId = receivingUser.Id,
+                Credits = count
             };
             await this.db.Transfers.AddAsync(transfer);
             await this.db.SaveChangesAsync();

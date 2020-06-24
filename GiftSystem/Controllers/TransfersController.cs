@@ -1,10 +1,13 @@
 ﻿namespace GiftSystem.Controllers
 {
+    using System.Linq;
     using System.Threading.Tasks;
+    using Data;
     using Data.Models;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
     using Models;
     using Services;
 
@@ -13,18 +16,23 @@
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly ICreditsService creditsService;
+        private readonly ApplicationDbContext dbContext;
 
         public TransfersController(
             UserManager<ApplicationUser> userManager, 
-            ICreditsService creditsService)
+            ICreditsService creditsService,
+            ApplicationDbContext dbContext)
         {
             this.userManager = userManager;
             this.creditsService = creditsService;
+            this.dbContext = dbContext;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return this.View();
+            var user = await this.userManager.FindByNameAsync(this.User.Identity.Name);
+            var model = new SendCreditsViewModel {Credits = this.dbContext.Users.FirstOrDefault(x => x.Id == user.Id).Credits};
+            return this.View(model);
         }
 
         [HttpPost]

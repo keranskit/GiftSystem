@@ -2,8 +2,11 @@
 @using Microsoft.AspNetCore.Identity
 @model GiftSystem.Models.SendCreditsViewModel
 
+<div>
+    <h1>You have @Model.Credits credits</h1>
+</div>
 <div class="text-center">
-    <h1 class="display-4">Transfer new credits</h1>
+    <h2 class="display-4">Transfer new credits</h2>
 </div>
 <form asp-controller="Transfers" asp-action="Index" method="post">
     <input type="hidden" asp-for="Sender" value="@this.User" />

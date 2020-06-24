@@ -47,6 +47,7 @@ namespace GiftSystem
             services.AddSingleton(this.configuration);
 
             services.AddTransient<ICreditsService, CreditsService>();
+            services.AddTransient<ITransfersService, TransfersService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
