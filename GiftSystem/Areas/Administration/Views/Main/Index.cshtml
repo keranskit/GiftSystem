@@ -1,9 +1,26 @@
 ﻿@model GiftSystem.ViewModels.AdminViewModel
 
-@foreach (var transfer in Model.Transfers)
-{
-    <p>Sender: @transfer.Sender.PhoneNumber, Receiver: @transfer.Receiver.PhoneNumber, Credits: @transfer.Credits, Message: @transfer.Message</p>
-}
+<table class="table table-sm">
+    <thead>
+    <tr>
+        <th scope="col">Credits</th>
+        <th scope="col">Sender</th>
+        <th scope="col">Receiver</th>
+        <th scope="col">Message</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var transfer in Model.Transfers)
+    {
+        <tr>
+        <th scope="row">@transfer.Credits</th>
+        <td>@transfer.Sender.PhoneNumber</td>
+        <td>@transfer.Receiver.PhoneNumber</td>
+        <td>@transfer.Message</td>
+    </tr>
+    }
+    </tbody>
+</table>
 
 <hr>
 

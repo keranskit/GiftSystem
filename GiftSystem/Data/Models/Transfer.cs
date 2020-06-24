@@ -1,8 +1,5 @@
 ﻿namespace GiftSystem.Data.Models
 {
-    using System;
-    using System.ComponentModel.DataAnnotations;
-
     public class Transfer
     {
         public string Id { get; set; }

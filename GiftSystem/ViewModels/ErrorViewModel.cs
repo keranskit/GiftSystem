@@ -1,4 +1,4 @@
-namespace GiftSystem.Models
+namespace GiftSystem.ViewModels
 {
     public class ErrorViewModel
     {

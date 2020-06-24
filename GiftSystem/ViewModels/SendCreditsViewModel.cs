@@ -1,4 +1,4 @@
-﻿namespace GiftSystem.Models
+﻿namespace GiftSystem.ViewModels
 {
     using Data.Models;
     using Ganss.XSS;

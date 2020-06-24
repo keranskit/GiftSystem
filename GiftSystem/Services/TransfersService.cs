@@ -2,7 +2,6 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using System.Runtime.CompilerServices;
     using Data;
     using Data.Models;
     using Microsoft.EntityFrameworkCore;
