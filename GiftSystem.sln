@@ -5,11 +5,6 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftSystem", "GiftSystem\GiftSystem.csproj", "{AE186881-538D-44C6-A7A9-9301EB1A3475}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftSystem.Tests", "GiftSystem.Tests\GiftSystem.Tests.csproj", "{9C44F3B6-10E4-4E2D-BB75-8BB9D37E206F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{AE186881-538D-44C6-A7A9-9301EB1A3475} = {AE186881-538D-44C6-A7A9-9301EB1A3475}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,10 +15,6 @@ Global
 		{AE186881-538D-44C6-A7A9-9301EB1A3475}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE186881-538D-44C6-A7A9-9301EB1A3475}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE186881-538D-44C6-A7A9-9301EB1A3475}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9C44F3B6-10E4-4E2D-BB75-8BB9D37E206F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C44F3B6-10E4-4E2D-BB75-8BB9D37E206F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C44F3B6-10E4-4E2D-BB75-8BB9D37E206F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C44F3B6-10E4-4E2D-BB75-8BB9D37E206F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
